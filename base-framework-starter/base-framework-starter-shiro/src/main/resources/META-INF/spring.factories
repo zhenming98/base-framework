@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+base.framework.starter.shiro.ShiroAutoConfiguration,\
+base.framework.starter.shiro.ShiroEndpointConfiguration
