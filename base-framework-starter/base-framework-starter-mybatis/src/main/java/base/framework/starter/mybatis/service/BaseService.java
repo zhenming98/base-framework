@@ -17,7 +17,7 @@ import java.util.List;
 public class BaseService<T extends BaseEntity, ID extends Serializable, DAO extends BaseMapper<T>> implements ServiceInterface<T, ID> {
 
     @Resource
-    private DAO dao;
+    public DAO dao;
 
     @Override
     public List<T> getAll() {
