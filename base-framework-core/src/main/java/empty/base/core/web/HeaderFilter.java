@@ -17,18 +17,20 @@ import java.io.IOException;
  */
 public class HeaderFilter extends OncePerRequestFilter {
 
-    private static final Logger LOG = LoggerFactory.getLogger(HeaderFilter.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(HeaderFilter.class);
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         try {
+            if (LOGGER.isDebugEnabled()) {
+                LOGGER.debug("empty.base.core.web.HeaderFilter filter");
+            }
             String token = Constants.getTokenFromRequest(request);
             String ip = HttpUtil.getIpAddr(request);
             WebRequestContextHolder.setClientIp(ip);
             if (token != null) {
                 WebRequestContextHolder.setToken(token);
             }
-            String requestUri = request.getRequestURI();
             filterChain.doFilter(request, response);
         } finally {
             WebRequestContextHolder.remove();

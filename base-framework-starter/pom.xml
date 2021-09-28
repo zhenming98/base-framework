@@ -20,6 +20,7 @@
         <module>base-framework-starter-mybatis</module>
         <module>base-framework-starter-redisson</module>
         <module>base-framework-starter-shiro</module>
+        <module>base-framework-starter-auth</module>
     </modules>
 
     <properties>
