@@ -3,6 +3,7 @@ package base.framework.starter.mybatis.service;
 import base.framework.starter.mybatis.dao.BaseMapper;
 import base.framework.starter.mybatis.entity.BaseEntity;
 import org.apache.commons.lang3.reflect.FieldUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.Resource;
 import javax.persistence.Id;
@@ -16,8 +17,8 @@ import java.util.List;
  */
 public class BaseService<T extends BaseEntity, ID extends Serializable, DAO extends BaseMapper<T>> implements ServiceInterface<T, ID> {
 
-    @Resource
-    public DAO dao;
+    @Autowired
+    protected DAO dao;
 
     @Override
     public List<T> getAll() {

@@ -37,7 +37,7 @@ public class ShiroProperties {
     private String forbiddenUrl = DEFAULT_FORBIDDEN_URL;
 
     /**
-     * platform:
+     * base:
      *   shiro:
      *     filterChainDefinition:
      *       /: anon
